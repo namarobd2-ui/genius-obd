@@ -14,51 +14,101 @@
   .meta { color: var(--muted); margin: 0 0 24px; }
   a { color: var(--link); }
   ul { padding-left: 22px; }
+  li { margin: 4px 0; }
 </style>
 </head>
 <body>
 <main>
 <h1>Genius OBD – Privacy Policy</h1>
-<p class="meta">Effective date: November 14, 2026</p>
+<p class="meta">App: Genius OBD (Android, package app.geniusobd).<br>
+Effective date: November 23, 2026</p>
 
-<p>Genius OBD ("the app", "we") is a car diagnostics app that reads data from your car through an OBD2 adapter. This policy explains what data the app handles, where it goes and how to delete it.</p>
+<p>Genius OBD ("the app", "we") reads data from your car through an OBD2 adapter (Bluetooth or Wi-Fi) and keeps it on your phone. The app needs no sign-up. This page explains what data the app handles, where it goes, how long it is kept and how to delete it.</p>
 
 <h2>Summary</h2>
 <ul>
   <li>No sign-up. The app does not collect your location, contacts or account data.</li>
-  <li>Car data stays on your phone. It leaves the phone only when you act: send a report for analysis, request norms for your car, or save or share a records archive.</li>
-  <li>We do not sell data.</li>
+  <li>Car data stays on your phone. It leaves the phone only for the features you use: send a report for analysis, request norms for your car, or save or share a records archive. When the app opens, it asks our server how many reports you have left.</li>
+  <li>If you have no subscription and no report pack, the app shows ads from Google AdMob: a banner at the bottom of most screens (not the main screen) and, now and then, a full-screen ad after you finish something. Car data, the VIN, notes and reports are never sent to the ad service.</li>
+  <li>We do not sell your car data, notes or reports. You can opt out of personalized ads in Settings, Ad choices.</li>
 </ul>
 
 <h2>Data stored on your phone</h2>
-<p>Car data (trip records, trouble codes, sensor readings, trip summaries, car details, notes, received reports) is stored on your phone.</p>
-<p>"Delete all" under Records in Settings deletes the selected car's trip records, raw logs, event log and voice notes. Records of other cars are deleted after you switch to each of them in My cars. Car details, the VIN, trip summaries, notes, survey answers and received reports stay until you clear the app's data in Android settings or uninstall the app.</p>
+<ul>
+  <li>Trip records: sensor readings, summaries by driving mode, trouble codes, readiness monitors and on-board self-test results.</li>
+  <li>Car details: make, model, year, engine, the VIN and the mileage if you enter it.</li>
+  <li>Your notes and voice notes recorded in the app, and your answers in the report survey.</li>
+  <li>Received reports and app settings.</li>
+</ul>
+<p>This data stays in the app's own storage on your phone. We do not have a copy of it.</p>
 
-<h2>When data leaves your phone</h2>
-<p>Data leaves the phone only when you act: when you send a report for analysis, request norms for your car, save or share a records archive.</p>
-<p>About once a week the app also downloads updates of the norms database from our server. That request sends no data about you or your car.</p>
+<h2>Data that leaves the phone</h2>
+<p>Data leaves the phone only for the features you use:</p>
+<ul>
+  <li><b>AI report.</b> When you send a report for analysis, a report package goes to our server and from there to Anthropic (USA), the AI provider that writes the analysis. It contains the car make, model and year, engine type, sensor readings and summaries, trouble codes, self-test results, the app's own Car health verdict for each system, dates and times of the trips, your survey answers, note and comments on events, a short summary of the previous report for the same car and the checks from it you marked as done, and the mileage if you entered it. It does not contain the VIN, location, name, phone number or email. Emails, phone numbers and VINs typed into notes and comments are masked before sending; please don't type names, addresses or other personal details there.</li>
+  <li><b>Reports left.</b> When the app opens, it asks our server how many reports you have left. This sends the install ID and, with a subscription, the Google Play purchase token. With a subscription the app also repeats this check in the background about every 10 days, so that renewals are counted.</li>
+  <li><b>Your reports on the server.</b> When you open AI reports, the app asks our server for the list of reports made for this install (date and overall result) and shows the ones that are not on the phone, for example after reinstalling the app. Downloading them is free.</li>
+  <li><b>Norms request.</b> If the app has no norms for your car and you tap “Ask to add what's missing” or “Ask to add this car”, the request goes to our server with the install ID, the car make, model, year and engine (or the engine size and fuel you typed in), which systems are missing and the version of the norms database. It does not contain the VIN. We add the norms to the database if we find them in official sources; the app checks for the answer when you open it.</li>
+  <li><b>Records archive.</b> When you save or share an archive of records, it goes where you choose to send it.</li>
+</ul>
 
-<h2>Reports for analysis</h2>
-<p>A report for analysis goes to our server and to Anthropic (USA), the AI provider that writes the analysis. It does not contain the VIN, location, name, phone number or email.</p>
-<p>The server keeps the package only until the analysis is finished. The finished report is kept for at least 30 days so the app can download it again, and after that for as long as we need it to check and improve the quality of the analysis.</p>
+<h2>What our server keeps</h2>
+<ul>
+  <li><b>Install ID.</b> The app creates a random install ID. It is shown under Settings, Privacy. The server stores only a salted hash of it, to deliver reports to the right phone and to limit how often reports can be ordered. If Android backup is on, the install ID (and nothing else from the app) is saved in your Google backup, so purchased reports and your reports on the server survive reinstalling the app. If you close the app while a report is being written, the app checks the report status in the background with this ID and shows a notification when it is ready.</li>
+  <li><b>Report package.</b> Kept only until the analysis is finished (usually a minute or two), then deleted.</li>
+  <li><b>Reports.</b> The finished report is stored on our server so the app can download it again at any time, and for as long as we need it to check and improve the quality of the analysis. Reports do not contain the VIN, location, name, phone number or email.</li>
+  <li><b>Request log.</b> Time, size, result code and cost of each analysis and whether it was paid from a subscription or a pack, without the package, for 90 days.</li>
+  <li><b>Norms requests.</b> The hashed install ID, the car description, the missing systems, the database version and our answer. Deleted 30 days after we answer, or after 90 days if there is no answer. To stop one person from flooding us with requests, we also keep a salted hash of your IP address (not the address itself) for one day, then delete it.</li>
+  <li><b>Subscription.</b> A salted hash of the Google Play purchase token, the subscription state and end date, and how many reports are left this month. Kept about 13 months after the last check with Google Play.</li>
+  <li><b>Report packs.</b> If you buy reports without a subscription: a salted hash of the purchase token, the hashed install ID, how many reports are left and when they expire (one year after purchase). Kept about 13 months after they expire. Deleting your data by email does not delete reports you paid for.</li>
+</ul>
 
-<h2>Norms requests</h2>
-<p>A norms request sends the install ID and the car make, model, year and engine (no VIN). The server keeps it for 30 days after the answer, or 90 days if there is no answer, and deletes it with your reports when you email us.</p>
-<p>To stop one person from flooding us with norms requests, the server also keeps a scrambled code made from your internet address, not the address itself, for one day.</p>
+<h2>Network connection</h2>
+<p>Everything the app sends to our server travels over an encrypted connection. Our server runs on Cloudflare. When the app connects, Cloudflare receives your IP address, as with any website. Our server uses it only to limit how many requests can come from one address and does not store it (the one exception is a one-day salted hash for norms requests, described above); logging of request addresses and headers is turned off.</p>
 
-<h2>Install ID and backup</h2>
-<p>The install ID is a random number created by the app. It is shown under Settings, Privacy. It is the only thing from the app saved in your Google backup, so purchased reports survive reinstalling the app.</p>
+<h2>Norms database updates</h2>
+<p>About once a week, and when you tap “Check and update” in Settings, the app downloads a newer version of the norms database from our server if there is one. This request sends nothing about you or your car, only the version the app already has. You can turn off “Check once a week” in Settings.</p>
 
-<h2>Purchases</h2>
-<p>Subscriptions and report packs are handled by Google Play. The server checks the purchase with Google and never sees your payment details. For packs bought without a subscription the server keeps how many reports are left and when they expire (one year after purchase).</p>
+<h2>Purchases and app checks</h2>
+<p>Subscriptions and report packs are handled by Google Play. The app sends the purchase token to our server, and the server asks Google Play whether the subscription is active or the pack is paid, and checks Google Play for refunds. We do not receive your payment details.</p>
+<p>Before an analysis the app also asks Google Play Integrity to confirm that the request comes from the genuine app installed from Google Play; the server checks this answer with Google and does not store it.</p>
 
 <h2>Ads</h2>
-<p>The free version may show ads from Google AdMob, which uses the advertising ID. Car data and reports are never sent to the ad service.</p>
+<p>If you have no subscription and no report pack, the app shows two kinds of ads from Google AdMob: a banner at the bottom of every screen except the main screen, and an occasional full-screen (interstitial) ad, at most once every 10 minutes and never during your first day after installing. A full-screen ad appears only in a pause after you finish something: after you close an AI report, or when you leave Records, Journal, Car health or Emissions test readiness. It is never shown when the app starts or closes, while connecting to the adapter, sending a report, buying, granting permissions, clearing error codes or on the live data screen. No ads are shown while a trip is being recorded or while the car is moving. People with a subscription or a report pack do not see ads.</p>
+<p>When ads are shown, the Google Mobile Ads SDK collects and shares with Google the advertising ID, app set ID and other device and app identifiers, the IP address (which can indicate approximate location), app interactions such as ad taps, and diagnostic information. Google uses them to show and measure ads, for analytics and to prevent fraud, as described in <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.</p>
+<p>Your choices:</p>
+<ul>
+  <li>On first launch Google may show a message asking for your consent. You can change your choice at any time in the app under Settings, Ad choices.</li>
+  <li>You can reset or delete the advertising ID in Android settings (Settings → Privacy → Ads, or Settings → Google → Ads). Without it you see ads that are not personalized.</li>
+</ul>
+<p>We put nothing about your car into ad requests. Car data, the VIN, notes, reports and the install ID are never sent to the ad service.</p>
+
+<h2>Data we do not collect</h2>
+<ul>
+  <li>No location. On Android 11 and older the system requires the location permission to scan for Bluetooth adapters; the app does not read or store your location. Google may estimate approximate location from the IP address when it shows ads (see Ads).</li>
+  <li>No contacts and no accounts.</li>
+  <li>The microphone is used only to record voice notes when you tap the record button. Voice notes stay on the phone. They are added to the exported records archive only if you check "Include voice notes", and you choose where to send that archive; voice notes are never sent to our server.</li>
+</ul>
+
+<h2>Sharing and sale</h2>
+<p>We do not sell your car data, the VIN, notes or reports, and we do not share them for advertising. Anthropic processes the report package only to write your report and, under its commercial terms, does not use it to train its models. Google receives what is described under Purchases and app checks and Ads.</p>
+<p>Some US state privacy laws treat giving the advertising ID and similar identifiers to an ad network for personalized ads as a “sale” or “sharing” of personal information. You can opt out at any time in Settings, Ad choices, or by deleting the advertising ID in Android settings.</p>
+
+<h2>Your privacy rights (US states)</h2>
+<p>Depending on where you live (for example California, Colorado, Connecticut, Virginia, Texas and other states with consumer privacy laws), you may have the right to:</p>
+<ul>
+  <li>know what personal information we collect and how we use it (this page);</li>
+  <li>get a copy of the personal information our server holds about you;</li>
+  <li>correct or delete it;</li>
+  <li>opt out of the sale or sharing of personal information and of targeted advertising (Settings, Ad choices).</li>
+</ul>
+<p>To use these rights, email us with the install ID shown under Settings, Privacy; this is how we find your data, since we do not know your name or email. You can let an authorized agent ask for you. We reply within 45 days. We will not treat you differently, or charge you more, for using these rights. If we decline a request, you can appeal by replying to our answer.</p>
 
 <h2>Deleting your data</h2>
 <ul>
-  <li>On the phone: use "Delete all" under Records in Settings, clear the app's data in Android settings, or uninstall the app.</li>
-  <li>On the server: email <a href="mailto:namarobd2@gmail.com">namarobd2@gmail.com</a> with the install ID shown under Settings, Privacy. We delete your reports and norms requests.</li>
+  <li><b>On the phone.</b> "Delete all" under Records in Settings deletes the selected car's trip records, raw logs, event log and voice notes. Records of other cars are deleted after you switch to each of them in My cars. Car details, the VIN, trip summaries, notes, survey answers and received reports stay until you clear the app's data in Android settings (Settings → Apps → Genius OBD → Storage → Clear data) or uninstall the app.</li>
+  <li><b>On our server.</b> To delete your reports, norms requests and request log from our server, email <a href="mailto:namarobd2@gmail.com">namarobd2@gmail.com</a> with the install ID shown in the app under Settings, Privacy. We delete them within 30 days and reply when it is done.</li>
+  <li><b>At Google.</b> Data collected for ads is handled by Google; see <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a>.</li>
 </ul>
 
 <h2>Children</h2>
